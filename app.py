@@ -97,7 +97,6 @@ if st.button("Start Scraping", use_container_width=True):
         st.warning("No questions found for this subject/year.")
     else:
         st.success(f"Fetched {len(questions)} questions for {selected_subject} {selected_year}.")
-        st.caption(f"Source: {url}")
 
         word_bytes = build_word_doc(questions, int(selected_year), selected_subject)
         saved_file_path = save_doc_to_subject_folder(word_bytes, selected_subject, int(selected_year))
